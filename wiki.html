@@ -1,0 +1,76 @@
+﻿<html style="height:100%;">
+<head>
+    <title>chy搜搜</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <link rel="icon" href="./we2iji.png">
+
+   <link href="bootstrap.min.css" rel="stylesheet" />
+   <style type="text/css">
+        body { display:table;width:100%;height:100%;margin:0; }
+        form { width:600px;margin:auto; }
+        #searchBox { width:95%; height:34px; margin:20px auto 25px auto; font-size:18px; padding-left: 10px;}
+        .btn { padding:0px 15px;height:36px;font-size:13px;font-weight:bold;background:#f2f2f2;border:1px solid #f2f2f2;color:#757575;border-radius:2px;}
+        .btn:hover { border:1px solid #c6c6c6;box-shadow:0 1px 1px rgba(0,0,0,0.1);color:#222; }
+        .btn[value="Google 搜索"] { margin: 0 3px 0 3px; }
+        .header,.footer { height:45px;display:table-row;vertical-align: middle; }
+        .header a { color: rgba(0, 0, 0, 0.75); text-decoration: none; float: right; margin: 20px 10px 0; }
+        .footer { background:#eee; }
+        #content { display:table-cell; vertical-align:middle; text-align:center; padding-bottom: 60px;}
+		#logo-subtext { position: absolute; top: 245px; right: -10px; font-size: 16px; font-family: Arial; color: #858585; }
+        #logo { display: inline-block; position: relative; }
+    </style>
+</head>
+<body>
+<div class="header" valign="top" align="right">
+    <a href="index.html" >网页搜索</a>
+	<a href="gxue.html">学术搜索</a>
+	
+</div>
+<div id="content">
+    <!-- <img id="logo-img" width="172px" src="we2iji.png"/> -->
+	
+	
+	<div id="logo">
+    <img id="logo-img" width="172px" src="we2iji.png"/>
+	<!-- <span id="logo-subtext">chy.site</span> --></div>
+    <form action="https://wc.yooooo.us/w/index.php" method="post" >
+        <input id="searchBox"  class="form-control"  type="text" name="search" baiduSug="2" autocomplete="off" />
+       <select id="selMir" class="btn" name="cus">
+		    <option>自动选择</option> 
+       </select> 
+        <input type="submit" class="btn" value="确认搜索" />
+      
+    </form>
+
+</div>
+<div class="footer"></div>
+</body>
+</html>
+<script type="text/javascript">
+var f = document.getElementsByTagName("form")[0];
+    var s = document.getElementById("selMir");
+    if (document.cookie && (i=document.cookie.indexOf("selected=")) >= 0) {
+        s.selectedIndex = parseInt(document.cookie.slice(i+9, i+10))
+    }
+    (window.onresize = function() {
+        var w = document.documentElement.clientWidth;
+        f.style.width=((w-20)>600 ? 600 : w-20) +"px";
+        document.getElementById("logo-img").style.width=(w>500 ? 272: w*0.55) +"px";
+    })();
+    if (document.documentElement.clientWidth >= 600 && document.documentElement.clientHeight >= 600) {
+        document.getElementById("searchBox").focus();
+    }
+    window.onload = function() {
+        (s.onchange = function() {
+            var i = s.selectedIndex;
+           
+            var t = new Date();
+            t.setDate(t.getDate()+1);
+            document.cookie = "selected=" + i + "; expires=" + t;
+            document.createElement("img").src = 'https://'+s.options[i].value+'/search?q=';
+        })();
+    }
+</script>
+
+<script charset="gbk" src="baidu.js"></script>
